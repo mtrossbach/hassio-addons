@@ -33,4 +33,4 @@ jobs:
         with:
           tag: "v${{ steps.version.outputs.version }}"
           body: "- Updated noah-mqtt to version [`${{ steps.version.outputs.version }}`](https://github.com/mtrossbach/noah-mqtt/releases/tag/${{ steps.version.outputs.version }})"
-          token: ${{secrets.GH_TOKEN}}
+          token: ${{secrets.GITHUB_TOKEN}}
