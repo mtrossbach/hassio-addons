@@ -1,0 +1,37 @@
+on:
+  repository_dispatch:
+    types: release
+
+name: Release
+
+permissions: {}
+jobs:
+  release:
+    permissions:
+      contents: write
+      pull-requests: write
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          token: ${{ secrets.GH_TOKEN }}
+      - name: Set variables
+        id: version
+        run: |
+          echo "version=${{ github.event.client_payload.version }}" >> "$GITHUB_OUTPUT"
+      - name: Set version and update release
+        run: |
+          jq '.version = "${{ steps.version.outputs.version }}"' noah-mqtt/config.json > noah-mqtt/config.json.tmp
+          mv noah-mqtt/config.json.tmp noah-mqtt//config.json
+          echo -e "## ${{ steps.version.outputs.version }}\n- Updated noah-mqtt to version [\`${{ steps.version.outputs.version }}\`](https://github.com/mtrossbach/noah-mqtt/releases/tag/${{ steps.version.outputs.z2m }})\n" | cat - noah-mqtt/CHANGELOG.md > noah-mqtt/CHANGELOG.md.tmp
+          mv noah-mqtt/CHANGELOG.md.tmp noah-mqtt/CHANGELOG.md
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "v${{ steps.version.outputs.version }}"
+      - uses: ncipollo/release-action@v1
+        with:
+          tag: "v${{ steps.version.outputs.version }}"
+          body: "- Updated noah-mqtt to version [`${{ steps.version.outputs.version }}`](https://github.com/mtrossbach/noah-mqtt/releases/tag/${{ steps.version.outputs.version }})"
+          token: ${{secrets.GH_TOKEN}}
