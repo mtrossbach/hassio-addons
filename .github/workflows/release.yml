@@ -24,7 +24,7 @@ jobs:
         run: |
           jq '.version = "${{ steps.version.outputs.version }}"' noah-mqtt/config.json > noah-mqtt/config.json.tmp
           mv noah-mqtt/config.json.tmp noah-mqtt//config.json
-          echo -e "## ${{ steps.version.outputs.version }}\n- Updated noah-mqtt to version [\`${{ steps.version.outputs.version }}\`](https://github.com/mtrossbach/noah-mqtt/releases/tag/${{ steps.version.outputs.z2m }})\n" | cat - noah-mqtt/CHANGELOG.md > noah-mqtt/CHANGELOG.md.tmp
+          echo -e "## ${{ steps.version.outputs.version }}\n- Updated noah-mqtt to version [\`${{ steps.version.outputs.version }}\`](https://github.com/mtrossbach/noah-mqtt/releases/tag/v${{ steps.version.outputs.version }})\n" | cat - noah-mqtt/CHANGELOG.md > noah-mqtt/CHANGELOG.md.tmp
           mv noah-mqtt/CHANGELOG.md.tmp noah-mqtt/CHANGELOG.md
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
