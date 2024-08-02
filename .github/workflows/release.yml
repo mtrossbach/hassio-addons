@@ -32,5 +32,5 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           tag: "v${{ steps.version.outputs.version }}"
-          body: "- Updated noah-mqtt to version [`${{ steps.version.outputs.version }}`](https://github.com/mtrossbach/noah-mqtt/releases/tag/${{ steps.version.outputs.version }})"
+          body: "- Updated noah-mqtt to version [`${{ steps.version.outputs.version }}`](https://github.com/mtrossbach/noah-mqtt/releases/tag/v${{ steps.version.outputs.version }})"
           token: ${{secrets.GITHUB_TOKEN}}
