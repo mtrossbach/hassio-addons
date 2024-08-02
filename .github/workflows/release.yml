@@ -15,8 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: master
-          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
       - name: Set variables
         id: version
         run: |
