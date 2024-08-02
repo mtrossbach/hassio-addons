@@ -1,0 +1,19 @@
+---
+configuration:
+  log_level:
+    name: Log-Level
+    description: >-
+      The parameter specifies the minimum severity of log messages to be recorded.
+      Possible values are DEBUG (all messages), INFO (general progress), WARN (potential issues), and ERROR (serious problems).
+  polling_interval:
+    name: Polling interval (in seconds)
+    description: >-
+      The parameter sets the time interval, in seconds, between each fetch operation for new data.
+      Adjusting this interval determines how frequently the system checks for updates, with shorter intervals allowing for more frequent data retrieval.
+      KEEP IN MIND: Calling the Growatt APIs too often can cause your account to be locked for 24 hours.
+  growatt_username:
+    name: Growatt Username
+    description: Your username used to login
+  growatt_password:
+    name: Growatt Passsword
+    description: Your password used to login
