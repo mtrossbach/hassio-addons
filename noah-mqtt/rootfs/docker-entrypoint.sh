@@ -1,5 +1,5 @@
 #!/usr/bin/env bashio
-
+export VERSION="$(jq --raw-output '.version // empty' config.json)"
 export MQTT_HOST="$(bashio::services 'mqtt' 'host')"
 export MQTT_PORT="$(bashio::services 'mqtt' 'port')"
 export MQTT_USERNAME="$(bashio::services 'mqtt' 'username')"
