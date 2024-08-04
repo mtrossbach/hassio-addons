@@ -11,6 +11,5 @@ esac \
 && curl -L -o /noah-mqtt.tar.gz https://github.com/mtrossbach/noah-mqtt/releases/download/v${NOAH_MQTT_VERSION}/noah-mqtt_${NOAH_MQTT_VERSION}_linux_${ARCH}.tar.gz && tar -xf /noah-mqtt.tar.gz && rm /noah-mqtt.tar.gz
 
 COPY rootfs/docker-entrypoint.sh /
-RUN chmod a+x /noah-mqtt
-RUN chmod a+x /docker-entrypoint.sh
+RUN chmod a+x /noah-mqtt && chmod a+x /docker-entrypoint.sh
 ENTRYPOINT [ "/docker-entrypoint.sh"]
