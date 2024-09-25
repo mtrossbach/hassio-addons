@@ -1,3 +1,6 @@
+## 0.0.22
+- Updated noah-mqtt to version [`0.0.22`](https://github.com/mtrossbach/noah-mqtt/releases/tag/v0.0.22)
+
 ## 0.0.21
 - Updated noah-mqtt to version [`0.0.21`](https://github.com/mtrossbach/noah-mqtt/releases/tag/v0.0.21)
 

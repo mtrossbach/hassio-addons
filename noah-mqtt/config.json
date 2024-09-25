@@ -1,7 +1,7 @@
 {
   "name": "Noah-MQTT",
   "description": "Integrating Growatt Noah 2000 home batteries with Home Assistant via MQTT, enabling real-time monitoring and control of your energy storage system. YOU MUST HAVE \"Mosquitto broker\" ADD-ON INSTALLED AND THE MQTT INTEGRATION ENABLED FOR THIS ADD-ON TO WORK",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "slug": "noah_mqtt",
   "init": false,
   "boot": "auto",
