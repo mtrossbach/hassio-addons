@@ -17,3 +17,7 @@ configuration:
   growatt_password:
     name: Growatt Passsword
     description: Your password used to login
+  mqtt:
+    name: Custom MQTT Settings (only set if you are NOT using the mosquitto add-on)
+    description: >-
+      The following settings are available: host, port, username, password
