@@ -18,7 +18,8 @@
   "options": {
     "log_level": "INFO",
     "polling_interval": 10,
-    "mqtt": {}
+    "mqtt": {},
+    "growatt_server_url": ""
   },
   "schema": {
     "mqtt": {
@@ -31,6 +32,6 @@
     "polling_interval": "int",
     "growatt_username": "str",
     "growatt_password": "password",
-    "growatt_server_url": "str"
+    "growatt_server_url": "str?"
   }
 }
