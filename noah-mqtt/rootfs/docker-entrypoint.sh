@@ -15,6 +15,7 @@ fi
 
 export GROWATT_USERNAME="$(bashio::config 'growatt_username')"
 export GROWATT_PASSWORD="$(bashio::config 'growatt_password')"
+export GROWATT_SERVER_URL="$(bashio::config 'growatt_server_url')"
 export LOG_LEVEL="$(bashio::config 'log_level')"
 export POLLING_INTERVAL="$(bashio::config 'polling_interval')"
 /noah-mqtt
