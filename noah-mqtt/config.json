@@ -31,6 +31,6 @@
     "polling_interval": "int",
     "growatt_username": "str",
     "growatt_password": "password",
-    "growatt_server_url": "str"
+    "growatt_server_url": "str?"
   }
 }

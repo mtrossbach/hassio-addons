@@ -19,7 +19,7 @@ configuration:
     description: Your password used to login
   growatt_server_url:
     name: Growatt Server URL
-    description: set different server url
+    description: Set different server url (optional)
   mqtt:
     name: Custom MQTT Settings (only set if you are NOT using the mosquitto add-on)
     description: >-
