@@ -17,19 +17,21 @@
   ],
   "options": {
     "log_level": "INFO",
-    "polling_interval": 10,
-    "mqtt": {}
+    "polling_interval": 30,
+    "mqtt": {},
+    "growatt_api_mode": "web+app"
   },
   "schema": {
+    "log_level": "list(DEBUG|INFO|WARN|ERROR)",
+    "polling_interval": "int",
+    "growatt_api_mode": "list(web+app|web|app)",
+    "growatt_username": "str",
+    "growatt_password": "password",
     "mqtt": {
       "host": "str?",
       "port": "int?",
       "username": "str?",
       "password": "str?"
-    },
-    "log_level": "str",
-    "polling_interval": "int",
-    "growatt_username": "str",
-    "growatt_password": "password"
+    }
   }
 }

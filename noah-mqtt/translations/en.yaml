@@ -10,7 +10,15 @@ configuration:
     description: >-
       The parameter sets the time interval, in seconds, between each fetch operation for new data.
       Adjusting this interval determines how frequently the system checks for updates, with shorter intervals allowing for more frequent data retrieval.
-      KEEP IN MIND: Calling the Growatt APIs too often can cause your account to be locked for 24 hours.
+      KEEP IN MIND: Calling the Growatt APIs too often can cause your account to be locked.
+  growatt_api_mode:
+    name: Growatt API Mode
+    description: >-
+      web+app: (current default) This mode combines the best of both worlds. It uses the Growatt Website APIs for data fetching (for stability) and the App APIs for setting parameters.
+      
+      web: This mode uses the Growatt Website APIs. These APIs provide a more stable way to fetch data. Setting parameters is not supported in this mode.
+      
+      app: (previous default) This mode utilizes the Shine App APIs. These APIs offer faster data updates and support setting parameters. However, they are the least stable, as they are prone to change with new app updates. They are also subject to strict rate limits, which may result in IP bans.
   growatt_username:
     name: Growatt Username
     description: Your username used to login
